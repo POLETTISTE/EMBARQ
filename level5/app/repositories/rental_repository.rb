@@ -14,9 +14,9 @@ class RentalRepository
     @json_input_file = json_input_file
     @json_output_file = json_output_file
     @next_id = 1
-    @option_gps = { "gps" => 5 }
-    @option_baby_seat = { "baby_seat" => 2 }
-    @option_additional_insurance = { "additional_insurance" => 10 }
+    @option_gps = { "gps" => 500 }
+    @option_baby_seat = { "baby_seat" => 200 }
+    @option_additional_insurance = { "additional_insurance" => 1000 }
     @rentals = []
 
     load_json
@@ -28,6 +28,14 @@ class RentalRepository
 
   def option_gps
     @option_gps
+  end
+
+  def option_baby_seat
+    @option_baby_seat
+  end
+
+  def option_additional_insurance
+    @option_additional_insurance
   end
 
   def find_car_by_id(car_id)
@@ -114,6 +122,8 @@ class RentalRepository
     json_data = @rentals.map do |rental|
       options = rental.options.dup
       options << @option_gps.keys.first if options.empty? && rental.options.include?(@option_gps.keys.first) # Add this line to include the GPS option key only if it was selected
+      options << @option_baby_seat.keys.first if options.empty? && rental.options.include?(@option_baby_seat.keys.first) # Add this line to include the GPS option key only if it was selected
+      options << @option_additional_insurance.keys.first if options.empty? && rental.options.include?(@option_additional_insurance.keys.first) # Add this line to include the GPS option key only if it was selected
 
       {
         id: rental.id,
@@ -143,6 +153,12 @@ class RentalRepository
       price = calculate_price(car, rental)
       options = rental.options.dup
       options << @option_gps.keys.first if options.empty? && rental.options.include?(@option_gps.keys.first) # Add this line to include the GPS option key only if it was selected
+      options << @option_baby_seat.keys.first if options.empty? && rental.options.include?(@option_baby_seat.keys.first) # Add this line to include the GPS option key only if it was selected
+      options << @option_additional_insurance.keys.first if options.empty? && rental.options.include?(@option_additional_insurance.keys.first) # Add this line to include the GPS option key only if it was selected
+
+      amount_gps = options.include?(@option_gps.keys.first) ? @option_gps.values.first : 0
+      amount_baby_seat = options.include?(@option_baby_seat.keys.first) ? @option_baby_seat.values.first : 0
+      amount_additional_insurance = options.include?(@option_additional_insurance.keys.first) ? @option_additional_insurance.values.first : 0
 
       {
         id: rental.id,
@@ -151,12 +167,12 @@ class RentalRepository
           {
             who: "driver",
             type: "debit",
-            amount: @price
+            amount: @price + (amount_gps * @duration) + (amount_baby_seat * @duration) + (amount_additional_insurance * @duration)
           },
           {
             who: "owner",
             type: "credit",
-            amount: calculate_owner_amount
+            amount: calculate_owner_amount + (amount_gps * @duration) + (amount_baby_seat * @duration)
           },
           {
             who: "insurance",
@@ -171,7 +187,7 @@ class RentalRepository
           {
             who: "drivy",
             type: "credit",
-            amount: calculate_commission_drivy_fee
+            amount: calculate_commission_drivy_fee + (amount_additional_insurance * @duration)
           }
         ]
       }
@@ -187,7 +203,8 @@ class RentalRepository
     data = JSON.parse(json_data)
     @cars = data["cars"]
     rentals_data = data['rentals']
-
+    options_data = data['options']
+  
     rentals_data.each do |rental_data|
       rental = Rental.new(
         id: rental_data['id'],
@@ -195,11 +212,20 @@ class RentalRepository
         end_date: format_date(rental_data['end_date']),
         car_id: rental_data['car_id'],
         distance: rental_data['distance'],
-        options: rental_data['options'] || []
+        options: [] # Initialize options array for each rental
       )
+  
+      options_data.each do |option_data|
+        if option_data['rental_id'] == rental.id
+          rental.options << option_data['type']
+        end
+      end
+  
       @rentals << rental
     end
+  
     @next_id = @rentals.last.id + 1 unless @rentals.empty?
     save_rental_in_output_json
   end
+  
 end

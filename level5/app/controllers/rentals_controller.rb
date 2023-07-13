@@ -23,7 +23,11 @@ class RentalsController
     )
 
     gps_option = ask_for_gps_option
+    baby_seat_option = ask_for_baby_seat_option
+    additional_insurance_option = ask_for_additional_insurance_option
     rental.options << @rental_repository.option_gps.keys.first if gps_option
+    rental.options << @rental_repository.option_baby_seat.keys.first if baby_seat_option
+    rental.options << @rental_repository.option_additional_insurance.keys.first if additional_insurance_option
 
     @rental_repository.create(rental)
   end
@@ -35,7 +39,29 @@ class RentalsController
   private
 
   def ask_for_gps_option
-    response = @rentals_view.ask_for_something("Do you want a GPS? (Y/N)").downcase
+    response = @rentals_view.ask_for_something("Do you want a GPS ? (Y/N)").downcase
+
+    case response
+    when "y", "yes"
+      true
+    else
+      false
+    end
+  end
+
+  def ask_for_baby_seat_option
+    response = @rentals_view.ask_for_something("Do you want a BABY SEAT ? (Y/N)").downcase
+
+    case response
+    when "y", "yes"
+      true
+    else
+      false
+    end
+  end
+
+  def ask_for_additional_insurance_option
+    response = @rentals_view.ask_for_something("Do you want an ADDITIONAL INSURANCE ? (Y/N)").downcase
 
     case response
     when "y", "yes"
