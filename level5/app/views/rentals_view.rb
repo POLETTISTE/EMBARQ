@@ -16,7 +16,7 @@ class RentalsView
       puts "                 OPTIONS:"
 
       rental.options.each do |option|
-        puts "                   - #{option}"
+        puts "                 -- #{option} --"
       end
 
       puts ""
