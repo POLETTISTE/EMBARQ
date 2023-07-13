@@ -112,7 +112,8 @@ class RentalRepository
         car_id: rental.car_id,
         start_date: rental.start_date,
         end_date: rental.end_date,
-        distance: rental.distance
+        distance: rental.distance,
+        options: rental.options
       }
     end
 
@@ -134,6 +135,7 @@ class RentalRepository
       price = calculate_price(car, rental)
       {
         id: rental.id,
+        options: [],
         actions: 
         [
           {

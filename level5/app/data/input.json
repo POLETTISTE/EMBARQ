@@ -12,28 +12,60 @@
       "car_id": 1,
       "start_date": "2015-12-08",
       "end_date": "2015-12-08",
-      "distance": 100
+      "distance": 100,
+      "options": [
+
+      ]
     },
     {
       "id": 2,
       "car_id": 1,
       "start_date": "2015-03-31",
       "end_date": "2015-04-01",
-      "distance": 300
+      "distance": 300,
+      "options": [
+
+      ]
     },
     {
       "id": 3,
       "car_id": 1,
       "start_date": "2015-07-03",
       "end_date": "2015-07-14",
-      "distance": 1000
+      "distance": 1000,
+      "options": [
+
+      ]
     },
     {
       "id": 4,
       "car_id": 1,
       "start_date": "2000-01-01",
       "end_date": "2000-01-09",
-      "distance": 123
+      "distance": 123,
+      "options": [
+
+      ]
+    },
+    {
+      "id": 5,
+      "car_id": 1,
+      "start_date": "2020-09-09",
+      "end_date": "2100-12-01",
+      "distance": 1,
+      "options": [
+
+      ]
+    },
+    {
+      "id": 6,
+      "car_id": 1,
+      "start_date": "2020-12-21",
+      "end_date": "2100-09-09",
+      "distance": 12,
+      "options": [
+
+      ]
     }
   ],
   "options": [
