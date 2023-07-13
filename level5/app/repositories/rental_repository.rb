@@ -14,16 +14,20 @@ class RentalRepository
     @json_input_file = json_input_file
     @json_output_file = json_output_file
     @next_id = 1
-    @option_gps = {"gps" => 5}
-    @option_baby_seat = {"baby_seat" => 2}
-    @option_additionnal_insurance = {"additionnal_insurance" => 10}
+    @option_gps = { "gps" => 5 }
+    @option_baby_seat = { "baby_seat" => 2 }
+    @option_additional_insurance = { "additional_insurance" => 10 }
     @rentals = []
-    
+
     load_json
   end
 
   def all
     @rentals
+  end
+
+  def option_gps
+    @option_gps
   end
 
   def find_car_by_id(car_id)
@@ -33,7 +37,7 @@ class RentalRepository
   def create(rental)
     rental.id = @next_id
 
-    raise "Invalid rental: Distance must be a positive number! / Please add your rental again :)" if @distance.to_i < 0
+    raise "Invalid rental: Distance must be a positive number! / Please add your rental again :)" if rental.distance.to_i < 0
     raise "Invalid rental: Start date must be before or equal to End date! / Please add your rental again :)" if format_date(rental.start_date) > format_date(rental.end_date)
     raise "Invalid rental: Invalid date format. Please use the format YYYY-MM-DD." unless rental.start_date.match?(/^\d{4}-\d{2}-\d{2}$/) && rental.end_date.match?(/^\d{4}-\d{2}-\d{2}$/)
     raise "Invalid rental: The car you chose does not exist! / Please add your rental again :)" if rental.car_id.to_i > @cars.length
@@ -84,9 +88,8 @@ class RentalRepository
     @duration = (formatted_last_date - formatted_first_date).to_i + 1
   end
 
-
   def calculate_commission_insurance_fee
-    @commission_insurance = @price * @commission * 50 / 100
+    @commission_insurance = @price * @commission * 0.5
     @commission_insurance.to_i
   end
 
@@ -94,7 +97,6 @@ class RentalRepository
     @commission_assistance = @duration * 100
     @commission_assistance.to_i
   end
-  
 
   def calculate_commission_drivy_fee
     @commission_drivy = @price * @commission - @commission_insurance - @commission_assistance
@@ -102,8 +104,8 @@ class RentalRepository
   end
 
   def calculate_owner_amount
-   @owner_amount =  @price * 70 / 100
-   @owner_amount.to_i
+    @owner_amount =  @price * 0.7
+    @owner_amount.to_i
   end
 
   private
@@ -136,21 +138,23 @@ class RentalRepository
     json_data_rentals = @rentals.map do |rental|
       car = find_car_by_id(rental.car_id)
       price = calculate_price(car, rental)
+      options = rental.options.dup
+      options << @option_gps.keys.first if options.empty? # Add this line to include the GPS option key
+
       {
         id: rental.id,
-        options: [],
-        actions: 
-        [
+        options: options,
+        actions: [
           {
-          who: "driver",
-          type: "debit",
-          amount: @price
+            who: "driver",
+            type: "debit",
+            amount: @price
           },
           {
             who: "owner",
             type: "credit",
             amount: calculate_owner_amount
-          }, 
+          },
           {
             who: "insurance",
             type: "credit",
@@ -169,6 +173,7 @@ class RentalRepository
         ]
       }
     end
+
     data = { "rentals" => json_data_rentals }
     json_string = JSON.pretty_generate(data)
     File.write(@json_output_file, json_string)
@@ -186,7 +191,8 @@ class RentalRepository
         start_date: format_date(rental_data['start_date']),
         end_date: format_date(rental_data['end_date']),
         car_id: rental_data['car_id'],
-        distance: rental_data['distance']
+        distance: rental_data['distance'],
+        options: rental_data['options'] || []
       )
       @rentals << rental
     end

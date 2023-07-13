@@ -14,7 +14,7 @@
       "end_date": "2015-12-08",
       "distance": 100,
       "options": [
-
+        "gps"
       ]
     },
     {
@@ -24,7 +24,7 @@
       "end_date": "2015-04-01",
       "distance": 300,
       "options": [
-
+        "gps"
       ]
     },
     {
@@ -34,7 +34,7 @@
       "end_date": "2015-07-14",
       "distance": 1000,
       "options": [
-
+        "gps"
       ]
     },
     {
@@ -44,7 +44,7 @@
       "end_date": "2000-01-09",
       "distance": 123,
       "options": [
-
+        "gps"
       ]
     },
     {
@@ -54,7 +54,7 @@
       "end_date": "2100-12-01",
       "distance": 1,
       "options": [
-
+        "gps"
       ]
     },
     {
@@ -63,6 +63,76 @@
       "start_date": "2020-12-21",
       "end_date": "2100-09-09",
       "distance": 12,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 7,
+      "car_id": 1,
+      "start_date": "2020-01-01",
+      "end_date": "2300-01-01",
+      "distance": 1,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 8,
+      "car_id": 1,
+      "start_date": "2020-01-01",
+      "end_date": "2020-12-01",
+      "distance": 12,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 9,
+      "car_id": 1,
+      "start_date": "2020-01-12",
+      "end_date": "2020-12-21",
+      "distance": 12,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 10,
+      "car_id": 1,
+      "start_date": "2000-01-01",
+      "end_date": "2100-01-01",
+      "distance": 1,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 11,
+      "car_id": 1,
+      "start_date": "2000-01-01",
+      "end_date": "2090-09-09",
+      "distance": 333,
+      "options": [
+
+      ]
+    },
+    {
+      "id": 12,
+      "car_id": 1,
+      "start_date": "2000-01-09",
+      "end_date": "2100-01-12",
+      "distance": 122,
+      "options": [
+        "gps"
+      ]
+    },
+    {
+      "id": 13,
+      "car_id": 1,
+      "start_date": "2000-12-21",
+      "end_date": "2100-12-21",
+      "distance": 1,
       "options": [
 
       ]

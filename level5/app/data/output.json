@@ -3,7 +3,7 @@
     {
       "id": 1,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -36,7 +36,7 @@
     {
       "id": 2,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -69,7 +69,7 @@
     {
       "id": 3,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -102,7 +102,7 @@
     {
       "id": 4,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -135,7 +135,7 @@
     {
       "id": 5,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -168,7 +168,7 @@
     {
       "id": 6,
       "options": [
-
+        "gps"
       ],
       "actions": [
         {
@@ -195,6 +195,237 @@
           "who": "drivy",
           "type": "credit",
           "amount": 1456738
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 102274810
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 71592367
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 15341221
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 10226900
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 5114321
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 341920
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 239343
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 51288
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 33600
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 17688
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 350920
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 245643
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 52638
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 34500
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 18138
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 36531810
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 25572267
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 5479771
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3652600
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1827171
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 33134130
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 23193891
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 4970119
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3312500
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1657619
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 36536020
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 25575214
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 5480403
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3652900
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1827503
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 36530810
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 25571567
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 5479621
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3652500
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1827121
         }
       ]
     }
