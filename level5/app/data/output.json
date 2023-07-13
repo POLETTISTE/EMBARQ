@@ -89,6 +89,36 @@
           "amount": 2970
         }
       ]
+    },
+    {
+      "id": 4,
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 15630
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 10941
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 2344
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 900
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1444
+        }
+      ]
     }
   ]
 }
