@@ -8,7 +8,6 @@ class Router
   def run
     while @running
       choice = display_menu
-      # system('clear') || system('cls')  # Clear the console screen
       action(choice)
     end
   end

@@ -3,7 +3,7 @@ require 'date'
 require_relative '../models/rental.rb'
 
 class RentalRepository
-  attr_reader :rentals
+  attr_reader :rentals, :option_gps, :option_baby_seat, :option_additional_insurance
 
   def initialize(json_input_file, json_output_file)
     @commission = 0.30
@@ -24,18 +24,6 @@ class RentalRepository
 
   def all
     @rentals
-  end
-
-  def option_gps
-    @option_gps
-  end
-
-  def option_baby_seat
-    @option_baby_seat
-  end
-
-  def option_additional_insurance
-    @option_additional_insurance
   end
 
   def find_car_by_id(car_id)
@@ -212,7 +200,7 @@ class RentalRepository
         end_date: format_date(rental_data['end_date']),
         car_id: rental_data['car_id'],
         distance: rental_data['distance'],
-        options: [] # Initialize options array for each rental
+        options: []
       )
   
       options_data.each do |option_data|
