@@ -89,6 +89,7 @@ class RentalRepository
 
   def calculate_commission_assistance_fee
     @commission_assistance = @duration * 100
+    @commission_assistance.to_i
   end
   
 
@@ -100,12 +101,6 @@ class RentalRepository
   def calculate_owner_amount
    @owner_amount =  @price * 70 / 100
    @owner_amount.to_i
-  end
-  
-  def calculate_drivy_amount
-  end
-
-  def calculate_driver_amount
   end
 
   private
