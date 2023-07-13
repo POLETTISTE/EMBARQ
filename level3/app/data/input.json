@@ -1,41 +1,5 @@
 {
-  "cars": [
-    {
-      "id": 1,
-      "price_per_day": 2000,
-      "price_per_km": 10
-    },
-    {
-      "id": 2,
-      "price_per_day": 2200,
-      "price_per_km": 2200
-    },
-    {
-      "id": 3,
-      "price_per_day": 200,
-      "price_per_km": 200
-    },
-    {
-      "id": 4,
-      "price_per_day": 200,
-      "price_per_km": 200
-    },
-    {
-      "id": 5,
-      "price_per_day": 200,
-      "price_per_km": 200
-    },
-    {
-      "id": 6,
-      "price_per_day": 200,
-      "price_per_km": 200
-    },
-    {
-      "id": 7,
-      "price_per_day": 200,
-      "price_per_km": 200
-    }
-  ],
+  "cars": [{ "id": 1, "price_per_day": 2000, "price_per_km": 10 }],
   "rentals": [
     {
       "id": 1,
