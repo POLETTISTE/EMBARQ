@@ -6,15 +6,18 @@ class RentalRepository
   attr_reader :rentals
 
   def initialize(json_input_file, json_output_file)
-    @json_input_file = json_input_file
-    @json_output_file = json_output_file
-    @rentals = []
-    @next_id = 1
     @commission = 0.30
     @commission_assistance = 0
     @commission_insurance = 0
     @commission_drivy = 0
     @duration = 0
+    @json_input_file = json_input_file
+    @json_output_file = json_output_file
+    @next_id = 1
+    @option_gps = {"gps" => 5}
+    @option_baby_seat = {"baby_seat" => 2}
+    @option_additionnal_insurance = {"additionnal_insurance" => 10}
+    @rentals = []
     
     load_json
   end
