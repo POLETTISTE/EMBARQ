@@ -6,21 +6,22 @@ class RentalsView
       puts "                       📅"
       puts "                  RENTAL N° #{rental.id}"
       puts ""
-      puts "               START DATE: #{rental.start_date}"
-      puts "                 END DATE: #{rental.end_date}"
+      puts "                   CAR : N° #{rental.car_id.to_i}"
       puts ""
-      puts "          YOUR CAR NUMBER: N°#{rental.car_id.to_i}"
+      puts "               FROM : #{rental.start_date}"
+      puts "                 TO : #{rental.end_date}"
       puts ""
-      puts "                 DISTANCE: #{rental.distance.to_i} KM"
       puts ""
-      puts "                 OPTIONS:"
+      puts "               DISTANCE : #{rental.distance.to_i} KM"
       puts ""
+      puts ""
+      puts "                      OPTIONS :"
       rental.options.each do |option|
         option_with_spaces = option.gsub("_", " ").upcase
-        puts "                 -- #{option_with_spaces} --"
+      puts "                  -- #{option_with_spaces} --"
       end
-
       puts ""
+
       puts "***********************************************************"
     end
   end

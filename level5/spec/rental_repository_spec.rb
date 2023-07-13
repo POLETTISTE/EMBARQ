@@ -26,12 +26,12 @@ describe RentalRepository do
   end
 
   describe "#calculate_price" do
-  it "calculates the correct price for a rental" do
-    car = { "id" => 1, "price_per_day" => 2000, "price_per_km" => 10 }
-    rental = Rental.new(id: 1, start_date: "2015-12-08", end_date: "2015-12-08", car_id: 1, distance: 100)
+    it "calculates the correct price for a rental" do
+      car = { "id" => 1, "price_per_day" => 2000, "price_per_km" => 10 }
+      rental = Rental.new(id: 1, start_date: "2015-12-08", end_date: "2015-12-08", car_id: 1, distance: 100)
 
-    expect(repository.calculate_price(car, rental)).to eq(3000)
+      expect(repository.calculate_price(car, rental)).to eq(3000)
+    end
   end
-end
 
 end
