@@ -333,7 +333,7 @@
     {
       "id": 11,
       "options": [
-        "gps"
+
       ],
       "actions": [
         {
@@ -399,7 +399,7 @@
     {
       "id": 13,
       "options": [
-        "gps"
+
       ],
       "actions": [
         {
@@ -426,6 +426,105 @@
           "who": "drivy",
           "type": "credit",
           "amount": 1827121
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 3661020
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 2562714
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 549153
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 365400
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 183753
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "options": [
+        "gps"
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 41020
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 28713
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 6153
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3400
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 2753
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "options": [
+
+      ],
+      "actions": [
+        {
+          "who": "driver",
+          "type": "debit",
+          "amount": 36533000
+        },
+        {
+          "who": "owner",
+          "type": "credit",
+          "amount": 25573100
+        },
+        {
+          "who": "insurance",
+          "type": "credit",
+          "amount": 5479950
+        },
+        {
+          "who": "assistance",
+          "type": "credit",
+          "amount": 3652600
+        },
+        {
+          "who": "drivy",
+          "type": "credit",
+          "amount": 1827350
         }
       ]
     }

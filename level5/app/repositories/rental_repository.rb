@@ -112,13 +112,16 @@ class RentalRepository
 
   def save_rental_in_input_json
     json_data = @rentals.map do |rental|
+      options = rental.options.dup
+      options << @option_gps.keys.first if options.empty? && rental.options.include?(@option_gps.keys.first) # Add this line to include the GPS option key only if it was selected
+
       {
         id: rental.id,
         car_id: rental.car_id,
         start_date: rental.start_date,
         end_date: rental.end_date,
         distance: rental.distance,
-        options: rental.options
+        options: options
       }
     end
 
@@ -139,7 +142,7 @@ class RentalRepository
       car = find_car_by_id(rental.car_id)
       price = calculate_price(car, rental)
       options = rental.options.dup
-      options << @option_gps.keys.first if options.empty? # Add this line to include the GPS option key
+      options << @option_gps.keys.first if options.empty? && rental.options.include?(@option_gps.keys.first) # Add this line to include the GPS option key only if it was selected
 
       {
         id: rental.id,
