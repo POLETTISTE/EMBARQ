@@ -3,7 +3,7 @@ class RentalsView
     rentals.each do|rental|
       puts""
       puts "***********************************************************"
-      puts ""
+      puts "                       📕"
       puts "                  RENTAL N° #{rental.id}"
       puts ""
       puts "               START DATE : #{rental.start_date.strftime("%B %e %A, %Y").upcase}"

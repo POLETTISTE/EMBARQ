@@ -8,7 +8,7 @@ class Router
   def run
     while @running
       choice = display_menu
-      system('clear') || system('cls')  # Clear the console screen
+      # system('clear') || system('cls')  # Clear the console screen
       action(choice)
     end
   end
@@ -16,18 +16,18 @@ class Router
   def display_menu
     puts ""
     puts '┌───────────────────────────────┐'
-    puts '│    WELCOME TO GETAROUND !     │'
+    puts '│   🚗 WELCOME TO GETAROUND 🚗   │'
     puts '├───────────────────────────────┤'
     puts '│           MENU                │'
     puts '├───────────────────────────────┤'
     puts '│   HOW CAN I HELP YOU ?        │'
     puts '├───────────────────────────────┤'
-    puts '│   [ 1 ] - LIST ALL CARS       │'
+    puts '│   [ 1 ] - DISPLAY CARS        │'
     puts '│   [ 2 ] - ADD A CAR           │'
-    puts '│   [ 3 ] - LIST ALL BOOKINGS   │'
-    puts '│   [ 4 ] - BOOK A CAR          │'
+    puts '│   [ 3 ] - DISPLAY YOUR RENTS  │'    
+    puts '│   [ 4 ] - RENT A CAR          │'
     puts '├───────────────────────────────┤'
-    puts '│   [ 0 ] - Quit                │'
+    puts '│   [ 0 ] - QUIT                │'
     puts '└───────────────────────────────┘'
     print '> '
     
@@ -42,7 +42,7 @@ class Router
     when 4 then @rentals_controller.add
     when 0 then @running = false
     else
-      puts "Please try again"
+      puts "WRONG CHOICE , PLEASE TRY AGAIN !"
     end
   end
 end

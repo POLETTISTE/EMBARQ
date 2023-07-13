@@ -29,6 +29,11 @@
       "id": 6,
       "price_per_day": 200,
       "price_per_km": 200
+    },
+    {
+      "id": 7,
+      "price_per_day": 200,
+      "price_per_km": 200
     }
   ],
   "rentals": [

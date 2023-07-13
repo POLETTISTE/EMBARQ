@@ -3,7 +3,7 @@ class CarsView
     cars.each do|car|
       puts""
       puts "***********************************************************"
-      puts ""
+      puts "                       🚗"
       puts "                  CAR ID : #{car.id}"
       puts ""
       puts "               PRICE / DAY : #{(car.price_per_day.to_f / 100).round(2)} €"
