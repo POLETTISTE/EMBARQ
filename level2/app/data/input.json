@@ -1,0 +1,68 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "price_per_day": 2000,
+      "price_per_km": 10
+    },
+    {
+      "id": 2,
+      "price_per_day": 2200,
+      "price_per_km": 2200
+    },
+    {
+      "id": 3,
+      "price_per_day": 200,
+      "price_per_km": 200
+    },
+    {
+      "id": 4,
+      "price_per_day": 200,
+      "price_per_km": 200
+    }
+  ],
+  "rentals": [
+    {
+      "id": 1,
+      "car_id": 1,
+      "start_date": "2015-12-08",
+      "end_date": "2015-12-08",
+      "distance": 100
+    },
+    {
+      "id": 2,
+      "car_id": 1,
+      "start_date": "2015-03-31",
+      "end_date": "2015-04-01",
+      "distance": 300
+    },
+    {
+      "id": 3,
+      "car_id": 1,
+      "start_date": "2015-07-03",
+      "end_date": "2015-07-14",
+      "distance": 1000
+    },
+    {
+      "id": 4,
+      "car_id": 2,
+      "start_date": "2023-07-22",
+      "end_date": "2023-07-22",
+      "distance": 2
+    },
+    {
+      "id": 5,
+      "car_id": 2,
+      "start_date": "2023-07-22",
+      "end_date": "2023-07-22",
+      "distance": 2
+    },
+    {
+      "id": 6,
+      "car_id": 1,
+      "start_date": "2000-01-01",
+      "end_date": "2300-01-21",
+      "distance": 1
+    }
+  ]
+}
